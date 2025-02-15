@@ -25,7 +25,7 @@ class UserTableSeeder extends Seeder
                 'name' => 'Admin', // Nom de l'utilisateur
                 'username' => 'admin', // Nom d'utilisateur
                 'email' => 'admin@gmail.com', // Email de l'utilisateur
-                'password' => Hash::make('111'), // Mot de passe haché pour des raisons de sécurité
+                'password' => Hash::make('111111'), // Mot de passe haché pour des raisons de sécurité
                 'role' => 'admin', // Rôle de l'utilisateur (admin)
                 'status' => '1', // Statut de l'utilisateur (1 = actif, 0 = inactif par exemple)
             ],
@@ -35,7 +35,7 @@ class UserTableSeeder extends Seeder
                 'name' => 'Instructor', // Nom de l'utilisateur
                 'username' => 'instructor', // Nom d'utilisateur
                 'email' => 'instructor@gmail.com', // Email de l'utilisateur
-                'password' => Hash::make('111'), // Mot de passe haché
+                'password' => Hash::make('111111'), // Mot de passe haché
                 'role' => 'instructor', // Rôle de l'utilisateur (instructeur)
                 'status' => '1', // Statut de l'utilisateur (1 = actif)
             ],
@@ -45,7 +45,7 @@ class UserTableSeeder extends Seeder
                 'name' => 'User', // Nom de l'utilisateur
                 'username' => 'user', // Nom d'utilisateur
                 'email' => 'user@gmail.com', // Email de l'utilisateur
-                'password' => Hash::make('111'), // Mot de passe haché
+                'password' => Hash::make('111111'), // Mot de passe haché
                 'role' => 'user', // Rôle de l'utilisateur (utilisateur régulier)
                 'status' => '1', // Statut de l'utilisateur (1 = actif)
             ],
