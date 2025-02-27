@@ -1,9 +1,7 @@
 /**
  * Main
  */
-
 'use strict';
-
 window.isRtl = window.Helpers.isRtl();
 window.isDarkStyle = window.Helpers.isDarkStyle();
 let menu,
@@ -13,12 +11,10 @@ let menu,
 if (document.getElementById('layout-menu')) {
   isHorizontalLayout = document.getElementById('layout-menu').classList.contains('menu-horizontal');
 }
-
 (function () {
   setTimeout(function () {
     window.Helpers.initCustomOptionCheck();
   }, 1000);
-
   if (typeof Waves !== 'undefined') {
     Waves.init();
     Waves.attach(
@@ -488,9 +484,11 @@ if (typeof $ !== 'undefined') {
       };
 
       // Search JSON
-      var searchJson = 'search-vertical.json'; // For vertical layout
+      var assetsPath = '/backend/assets/'; // Définition correcte du chemin vers les assets
+
+      var searchJson = 'search-vertical.json';
       if ($('#layout-menu').hasClass('menu-horizontal')) {
-        var searchJson = 'search-horizontal.json'; // For vertical layout
+        searchJson = 'search-horizontal.json';
       }
       // Search API AJAX call
       var searchData = $.ajax({

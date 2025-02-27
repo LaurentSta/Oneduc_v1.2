@@ -40,7 +40,7 @@
                         <form id="formAuthentication" method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="mb-3">
-                                <label for="email" class="form-label">{{ __('Email') }}</label>
+                                <label for="email" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="email" name="email" :value="old('email')" required autofocus placeholder="Entrez votre email" />
                                 @error('email')
                                     <div class="text-danger mt-1">Ces références ne correspondent pas à nos dossiers.</div>
@@ -48,7 +48,7 @@
                             </div>
 
                             <div class="mb-3 form-password-toggle">
-                                <label for="password" class="form-label">{{ __('Mot de passe') }}</label>
+                                <label for="password" class="form-label">Mot de passe</label>
                                 <div class="input-group input-group-merge">
                                     <input type="password" id="password" class="form-control" name="password" required autocomplete="current-password" placeholder="••••••••••" />
                                     <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
@@ -59,7 +59,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <button class="btn btn-primary d-grid w-100" type="submit">{{ __('Connexion') }}</button>
+                                <button class="btn btn-primary d-grid w-100" type="submit">Connexion</button>
                             </div>
 
                             @if (Route::has('password.request'))

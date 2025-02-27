@@ -20,38 +20,7 @@
                 <!-- /Search -->
 
                 <ul class="navbar-nav flex-row align-items-center ms-auto">
-                  <!-- Language -->
-                  <li class="nav-item dropdown-language dropdown">
-                    <a
-                      class="nav-link btn btn-text-secondary btn-icon rounded-pill dropdown-toggle hide-arrow"
-                      href="javascript:void(0);"
-                      data-bs-toggle="dropdown">
-                      <i class="ti ti-language rounded-circle ti-md"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                      <li>
-                        <a class="dropdown-item" href="javascript:void(0);" data-language="en" data-text-direction="ltr">
-                          <span>English</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="javascript:void(0);" data-language="fr" data-text-direction="ltr">
-                          <span>French</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="javascript:void(0);" data-language="ar" data-text-direction="rtl">
-                          <span>Arabic</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="javascript:void(0);" data-language="de" data-text-direction="ltr">
-                          <span>German</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <!--/ Language -->
+
 
                   <!-- Style Switcher -->
                   <li class="nav-item dropdown-style-switcher dropdown">
@@ -83,99 +52,7 @@
                   </li>
                   <!-- / Style Switcher-->
 
-                  <!-- Quick links  -->
-                  <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown">
-                    <a
-                      class="nav-link btn btn-text-secondary btn-icon rounded-pill btn-icon dropdown-toggle hide-arrow"
-                      href="javascript:void(0);"
-                      data-bs-toggle="dropdown"
-                      data-bs-auto-close="outside"
-                      aria-expanded="false">
-                      <i class="ti ti-layout-grid-add ti-md"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end p-0">
-                      <div class="dropdown-menu-header border-bottom">
-                        <div class="dropdown-header d-flex align-items-center py-3">
-                          <h6 class="mb-0 me-auto">Shortcuts</h6>
-                          <a
-                            href="javascript:void(0)"
-                            class="btn btn-text-secondary rounded-pill btn-icon dropdown-shortcuts-add"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="top"
-                            title="Add shortcuts"
-                            ><i class="ti ti-plus text-heading"></i
-                          ></a>
-                        </div>
-                      </div>
-                      <div class="dropdown-shortcuts-list scrollable-container">
-                        <div class="row row-bordered overflow-visible g-0">
-                          <div class="dropdown-shortcuts-item col">
-                            <span class="dropdown-shortcuts-icon rounded-circle mb-3">
-                              <i class="ti ti-calendar ti-26px text-heading"></i>
-                            </span>
-                            <a href="app-calendar.html" class="stretched-link">Calendar</a>
-                            <small>Appointments</small>
-                          </div>
-                          <div class="dropdown-shortcuts-item col">
-                            <span class="dropdown-shortcuts-icon rounded-circle mb-3">
-                              <i class="ti ti-file-dollar ti-26px text-heading"></i>
-                            </span>
-                            <a href="app-invoice-list.html" class="stretched-link">Invoice App</a>
-                            <small>Manage Accounts</small>
-                          </div>
-                        </div>
-                        <div class="row row-bordered overflow-visible g-0">
-                          <div class="dropdown-shortcuts-item col">
-                            <span class="dropdown-shortcuts-icon rounded-circle mb-3">
-                              <i class="ti ti-user ti-26px text-heading"></i>
-                            </span>
-                            <a href="app-user-list.html" class="stretched-link">User App</a>
-                            <small>Manage Users</small>
-                          </div>
-                          <div class="dropdown-shortcuts-item col">
-                            <span class="dropdown-shortcuts-icon rounded-circle mb-3">
-                              <i class="ti ti-users ti-26px text-heading"></i>
-                            </span>
-                            <a href="app-access-roles.html" class="stretched-link">Role Management</a>
-                            <small>Permission</small>
-                          </div>
-                        </div>
-                        <div class="row row-bordered overflow-visible g-0">
-                          <div class="dropdown-shortcuts-item col">
-                            <span class="dropdown-shortcuts-icon rounded-circle mb-3">
-                              <i class="ti ti-device-desktop-analytics ti-26px text-heading"></i>
-                            </span>
-                            <a href="index.html" class="stretched-link">Dashboard</a>
-                            <small>User Dashboard</small>
-                          </div>
-                          <div class="dropdown-shortcuts-item col">
-                            <span class="dropdown-shortcuts-icon rounded-circle mb-3">
-                              <i class="ti ti-settings ti-26px text-heading"></i>
-                            </span>
-                            <a href="pages-account-settings-account.html" class="stretched-link">Setting</a>
-                            <small>Account Settings</small>
-                          </div>
-                        </div>
-                        <div class="row row-bordered overflow-visible g-0">
-                          <div class="dropdown-shortcuts-item col">
-                            <span class="dropdown-shortcuts-icon rounded-circle mb-3">
-                              <i class="ti ti-help ti-26px text-heading"></i>
-                            </span>
-                            <a href="pages-faq.html" class="stretched-link">FAQs</a>
-                            <small>FAQs & Articles</small>
-                          </div>
-                          <div class="dropdown-shortcuts-item col">
-                            <span class="dropdown-shortcuts-icon rounded-circle mb-3">
-                              <i class="ti ti-square ti-26px text-heading"></i>
-                            </span>
-                            <a href="modal-examples.html" class="stretched-link">Modals</a>
-                            <small>Useful Popups</small>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <!-- Quick links -->
+
 
                   <!-- Notification -->
                   <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
@@ -437,7 +314,8 @@
                       href="javascript:void(0);"
                       data-bs-toggle="dropdown">
                       <div class="avatar avatar-online">
-                        <img src="{{ asset('backend/assets/img/avatars/1.png')}}" alt class="rounded-circle" />
+                        <img src="{{ file_exists(public_path('upload/admin_images/'.$profileData->photo)) ? asset('upload/admin_images/'.$profileData->photo) : asset('upload/NoPhoto.png') }}" alt="user-avatar">
+
                       </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
@@ -446,7 +324,8 @@
                           <div class="d-flex align-items-center">
                             <div class="flex-shrink-0 me-2">
                               <div class="avatar avatar-online">
-                                <img src="{{ asset('backend/assets/img/avatars/1.png')}}" alt class="rounded-circle" />
+                                <img src="{{ file_exists(public_path('upload/admin_images/'.$profileData->photo)) ? asset('upload/admin_images/'.$profileData->photo) : asset('upload/NoPhoto.png') }}" alt="user-avatar">
+
                               </div>
                             </div>
                             <div class="flex-grow-1">
@@ -460,33 +339,17 @@
                         <div class="dropdown-divider my-1 mx-n2"></div>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="pages-profile-user.html">
-                          <i class="ti ti-user me-3 ti-md"></i><span class="align-middle">My Profile</span>
+                        <a class="dropdown-item" href="{{route ('admin.profile')}}">
+                          <i class="ti ti-user me-3 ti-md"></i><span class="align-middle">Mon profil</span>
                         </a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="pages-account-settings-account.html">
-                          <i class="ti ti-settings me-3 ti-md"></i><span class="align-middle">Settings</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="pages-account-settings-billing.html">
-                          <span class="d-flex align-items-center align-middle">
-                            <i class="flex-shrink-0 ti ti-file-dollar me-3 ti-md"></i
-                            ><span class="flex-grow-1 align-middle">Billing</span>
-                            <span class="flex-shrink-0 badge bg-danger d-flex align-items-center justify-content-center"
-                              >4</span
-                            >
-                          </span>
+                        <a class="dropdown-item" href="{{route ('admin.parametre')}}">
+                          <i class="ti ti-settings me-3 ti-md"></i><span class="align-middle">Paramètres</span>
                         </a>
                       </li>
                       <li>
                         <div class="dropdown-divider my-1 mx-n2"></div>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="pages-pricing.html">
-                          <i class="ti ti-currency-dollar me-3 ti-md"></i><span class="align-middle">Pricing</span>
-                        </a>
                       </li>
                       <li>
                         <a class="dropdown-item" href="pages-faq.html">
