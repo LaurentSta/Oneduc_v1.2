@@ -38,7 +38,7 @@
           </button>
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link fw-medium" aria-current="page" href="landing-page.html#landingHero">Accueil</a>
+              <a class="nav-link fw-medium" aria-current="page" href="/">Accueil</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-medium" href="landing-page.html#landingFeatures">Features</a>

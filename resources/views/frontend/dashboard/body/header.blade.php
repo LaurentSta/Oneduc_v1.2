@@ -314,7 +314,7 @@
                       href="javascript:void(0);"
                       data-bs-toggle="dropdown">
                       <div class="avatar avatar-online">
-                        <img src="{{ file_exists(public_path('upload/instructor_images/'.$profileData->photo)) ? asset('upload/instructor_images/'.$profileData->photo) : asset('upload/NoPhoto.png') }}" alt="user-avatar">
+                        <img src="{{ file_exists(public_path('upload/admin_images/'.$profileData->photo)) ? asset('upload/admin_images/'.$profileData->photo) : asset('upload/NoPhoto.png') }}" alt="user-avatar">
 
                       </div>
                     </a>
@@ -324,13 +324,13 @@
                           <div class="d-flex align-items-center">
                             <div class="flex-shrink-0 me-2">
                               <div class="avatar avatar-online">
-                                <img src="{{ file_exists(public_path('upload/instructor_images/'.$profileData->photo)) ? asset('upload/instructor_images/'.$profileData->photo) : asset('upload/NoPhoto.png') }}" alt="user-avatar">
+                                <img src="{{ file_exists(public_path('upload/admin_images/'.$profileData->photo)) ? asset('upload/admin_images/'.$profileData->photo) : asset('upload/NoPhoto.png') }}" alt="user-avatar">
 
                               </div>
                             </div>
                             <div class="flex-grow-1">
                               <h6 class="mb-0">John Doe</h6>
-                              <small class="text-muted">Instructor</small>
+                              <small class="text-muted">Admin</small>
                             </div>
                           </div>
                         </a>
@@ -339,12 +339,12 @@
                         <div class="dropdown-divider my-1 mx-n2"></div>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="{{route ('instructor.profile')}}">
+                        <a class="dropdown-item" href="{{route ('admin.profile')}}">
                           <i class="ti ti-user me-3 ti-md"></i><span class="align-middle">Mon profil</span>
                         </a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="{{route ('instructor.parametre')}}">
+                        <a class="dropdown-item" href="{{route ('admin.parametre')}}">
                           <i class="ti ti-settings me-3 ti-md"></i><span class="align-middle">Paramètres</span>
                         </a>
                       </li>
@@ -358,7 +358,7 @@
                       </li>
             <li>
             <div class="d-grid px-2 pt-2 pb-1">
-                <a class="btn btn-sm btn-danger d-flex" href="{{url('instructor/logout')}}" target="_blank">
+                <a class="btn btn-sm btn-danger d-flex" href="{{url('admin/logout')}}" target="_blank">
                 <small class="align-middle">Deconnexion</small>
                 <i class="ti ti-logout ms-2 ti-14px"></i>
                 </a>

@@ -18,7 +18,7 @@ Route::get('/connexion', [AdminController::class, 'Login'])->name('connexion');
 Route::get('/inscription', [UserController::class, 'Register'])->name('inscription');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('frontend.dashboard.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -44,6 +44,10 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.
 Route::middleware(['auth', 'role:instructor'])->group(function () {
     Route::get('/instructor/dashboard', [InstructorController::class, 'InstructorDashboard'])->name('instructor.dashboard');
     Route::get('/instructor/logout', [InstructorController::class, 'InstructorLogout'])->name('instructor.logout');
+    Route::get('/instructor/profile', [InstructorController::class, 'InstructorProfile'])->name('instructor.profile');
+    Route::get('/instructor/parametre', [InstructorController::class, 'InstructorParametre'])->name('instructor.parametre');
+    Route::post('/instructor/profil/store', [InstructorController::class, 'InstructorProfilStore'])->name('instructor.profil.store');
+    Route::get('/instructor/securite', [InstructorController::class, 'showInstructorSecurite'])->name('instructor.securite.show');
 });
 
 

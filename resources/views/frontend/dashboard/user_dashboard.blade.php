@@ -49,7 +49,7 @@
     <link rel="stylesheet" href="{{asset ('backend/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css')}}" />
     <link rel="stylesheet" href="{{asset ('backend/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css')}}" />
     <link rel="stylesheet" href="{{asset ('backend/assets/vendor/libs/apex-charts/apex-charts.css')}}" />
-    
+
 
     <!-- Page CSS -->
 
@@ -69,24 +69,24 @@
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
             <!--Démarrage sidebar-->
-                @include('admin.body.sidebar')
+                @include('frontend.dashboard.body.sidebar')
             <!--Fin sidebar-->
 
                 <!-- Layout container -->
           <div class="layout-page">
             <!-- Navbar -->
-            @include('admin.body.header')
+            @include('frontend.dashboard.body.header')
             <!-- / Navbar -->
 
             <!-- Content wrapper -->
             <div class="content-wrapper">
 
             <!-- Content -->
-            @yield('admin')
+            @yield('userdashboard')
             <!-- / Content -->
 
               <!-- Footer -->
-              @include('admin.body.footer')
+              @include('frontend.dashboard.body.footer')
               <!-- / Footer -->
 
               <div class="content-backdrop fade"></div>
