@@ -12,19 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id(); // Crée une colonne 'id' de type BIGINT (AUTO_INCREMENT).
-            $table->string('name'); // Crée une colonne 'name' de type VARCHAR.
-            $table->string('username')->nullable(); // Crée une colonne 'username' de type VARCHAR qui peut être NULL.
-            $table->string('email')->unique(); // Crée une colonne 'email' de type VARCHAR avec une contrainte UNIQUE.
-            $table->timestamp('email_verified_at')->nullable(); // Crée une colonne 'email_verified_at' de type TIMESTAMP qui peut être NULL.
-            $table->string('password'); // Crée une colonne 'password' de type VARCHAR.
-            $table->string('photo')->nullable(); // Crée une colonne 'photo' de type VARCHAR qui peut être NULL.
-            $table->string('phone')->nullable(); // Crée une colonne 'phone' de type VARCHAR qui peut être NULL.
-            $table->string('address')->nullable(); // Crée une colonne 'address' de type VARCHAR qui peut être NULL.
-            $table->enum('role',['admin','instructor','user'])->default('user'); // Crée une colonne 'role' de type ENUM avec des valeurs possibles 'admin', 'instructor', 'user' et une valeur par défaut 'user'.
-            $table->enum('status',['1','0'])->default('1'); // Crée une colonne 'status' de type ENUM avec des valeurs possibles '1', '0' et une valeur par défaut '1'.
-            $table->rememberToken(); // Crée une colonne 'remember_token' de type VARCHAR pour la fonctionnalité "remember me".
-            $table->timestamps(); // Crée deux colonnes 'created_at' et 'updated_at' de type TIMESTAMP pour les horodatages.
+            $table->id(); // Clé primaire auto-incrémentée
+            $table->string('name');
+            $table->string('username')->nullable();
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->string('photo')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+            $table->string('societe')->nullable(); // ✅ Ajout du champ société
+            $table->enum('role', ['admin', 'instructor', 'user'])->default('user'); // ✅ Role sous forme d'ENUM
+            $table->boolean('status')->default(true); // ✅ Boolean au lieu d'ENUM pour optimiser les requêtes
+            $table->rememberToken();
+            $table->timestamps();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
@@ -35,7 +36,7 @@ return new class extends Migration
 
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
-            $table->foreignId('user_id')->nullable()->index();
+            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete(); // ✅ Meilleure gestion des sessions
             $table->string('ip_address', 45)->nullable();
             $table->text('user_agent')->nullable();
             $table->longText('payload');

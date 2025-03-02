@@ -34,7 +34,7 @@
               </div>
               <div class="content-right">
                 <p class="mb-0 fw-medium">Test Results</p>
-                <h4 class="text-info mb-0">82%</h4>
+                <h4 class="text-info mb-0">82%</h4>  
               </div>
             </div>
             <div class="d-flex align-items-center gap-4">

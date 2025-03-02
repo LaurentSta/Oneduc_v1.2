@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -119,4 +120,35 @@ class AdminController extends Controller
 
         return back()->with('message', 'Votre mot de passe a été modifié avec succès.');
     }
+    public function BecomeInstructor()
+    {
+        return view('frontend.instructor.reg_instructor'); // Vue avec le formulaire
+    }
+
+    // Traite l'inscription et enregistre l'instructeur
+    public function InstructorRegister(Request $request)
+    {
+        // Validation des données
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+            'societe' => 'nullable|string|max:255',
+        ]);
+
+        // Création du formateur
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => 'instructor', // ✅ Défini le rôle "instructor"
+            'societe' => $request->societe,
+            'status' => false, // ✅ En attente de validation par l’admin
+        ]);
+
+        return redirect()->route('become.instructor')->with('success', 'Inscription réussie ! Attendez la validation.');
+    }
+
+
+
 }

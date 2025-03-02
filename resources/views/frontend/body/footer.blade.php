@@ -49,7 +49,7 @@
               <h6 class="footer-title mb-6">Démos</h6>
               <ul class="list-unstyled">
                 <li class="mb-4">
-                  <a href="../vertical-menu-template/" target="_blank" class="footer-link">Disposition verticale</a>
+                  <a href="{{route('become.instructor')}}" target="_blank" class="footer-link">Inscription formateur</a>
                 </li>
                 <li class="mb-4">
                   <a href="../horizontal-menu-template/" target="_blank" class="footer-link">Disposition horizontale</a>

@@ -23,7 +23,7 @@ class InstructorController extends Controller
     {
         $id = Auth::user()->id;
         $profileData = User::find($id);
-        return view('instructor.Instructor_profile_view', compact('profileData'));
+        return view('instructor.instructor_profile_view', compact('profileData'));
     }
     public function InstructorParametre()
     {

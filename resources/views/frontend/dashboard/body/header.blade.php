@@ -13,7 +13,7 @@
                   <div class="nav-item navbar-search-wrapper mb-0">
                     <a class="nav-item nav-link search-toggler d-flex align-items-center px-0" href="javascript:void(0);">
                       <i class="ti ti-search ti-md me-2 me-lg-4 ti-lg"></i>
-                      <span class="d-none d-md-inline-block text-muted fw-normal">Search (Ctrl+/)</span>
+                      <span class="d-none d-md-inline-block text-muted fw-normal">Recherche (Ctrl+/)</span>
                     </a>
                   </div>
                 </div>
@@ -314,23 +314,23 @@
                       href="javascript:void(0);"
                       data-bs-toggle="dropdown">
                       <div class="avatar avatar-online">
-                        <img src="{{ file_exists(public_path('upload/admin_images/'.$profileData->photo)) ? asset('upload/admin_images/'.$profileData->photo) : asset('upload/NoPhoto.png') }}" alt="user-avatar">
+                        <img src="{{ file_exists(public_path('upload/user_images/'.$profileData->photo)) ? asset('upload/user_images/'.$profileData->photo) : asset('upload/NoPhoto.png') }}" alt="user-avatar">
 
                       </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                       <li>
-                        <a class="dropdown-item mt-0" href="pages-account-settings-account.html">
+                        <a class="dropdown-item mt-0" href="{{ route('login') }}">
                           <div class="d-flex align-items-center">
                             <div class="flex-shrink-0 me-2">
                               <div class="avatar avatar-online">
-                                <img src="{{ file_exists(public_path('upload/admin_images/'.$profileData->photo)) ? asset('upload/admin_images/'.$profileData->photo) : asset('upload/NoPhoto.png') }}" alt="user-avatar">
+                                <img src="{{ file_exists(public_path('upload/user_images/'.$profileData->photo)) ? asset('upload/user_images/'.$profileData->photo) : asset('upload/NoPhoto.png') }}" alt="user-avatar">
 
                               </div>
                             </div>
                             <div class="flex-grow-1">
                               <h6 class="mb-0">John Doe</h6>
-                              <small class="text-muted">Admin</small>
+                              <small class="text-muted">Utilisateur</small>
                             </div>
                           </div>
                         </a>
@@ -339,12 +339,12 @@
                         <div class="dropdown-divider my-1 mx-n2"></div>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="{{route ('admin.profile')}}">
+                        <a class="dropdown-item" href="{{route ('user.profile')}}">
                           <i class="ti ti-user me-3 ti-md"></i><span class="align-middle">Mon profil</span>
                         </a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="{{route ('admin.parametre')}}">
+                        <a class="dropdown-item" href="{{route ('user.parametre')}}">
                           <i class="ti ti-settings me-3 ti-md"></i><span class="align-middle">Paramètres</span>
                         </a>
                       </li>
@@ -358,7 +358,7 @@
                       </li>
             <li>
             <div class="d-grid px-2 pt-2 pb-1">
-                <a class="btn btn-sm btn-danger d-flex" href="{{url('admin/logout')}}" target="_blank">
+                <a class="btn btn-sm btn-danger d-flex" href="{{url('user/logout')}}" target="_blank">
                 <small class="align-middle">Deconnexion</small>
                 <i class="ti ti-logout ms-2 ti-14px"></i>
                 </a>

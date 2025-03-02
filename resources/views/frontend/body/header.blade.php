@@ -318,12 +318,22 @@
           <!-- / Style Switcher-->
 
           <!-- navbar button: Start -->
-          <li>
-            <a href="{{route('connexion')}}" class="btn btn-primary rounded-pill" target="_blank"
-              ><span class="tf-icons ti ti-login scaleX-n1-rtl me-md-1"></span
-              ><span class="d-none d-md-block">Connexion</span></a
-            >
-          </li>
+@auth
+<li>
+    <a href="{{route('connexion')}}" class="btn btn-primary rounded-pill" target="_blank"
+      ><span class="tf-icons ti ti-dashboard scaleX-n1-rtl me-md-1"></span
+      ><span class="d-none d-md-block">Tableau de bord</span>
+    </a>
+  </li>
+    @else
+    <a href="{{route('connexion')}}" class="btn btn-primary rounded-pill" target="_blank"
+      ><span class="tf-icons ti ti-login scaleX-n1-rtl me-md-1"></span
+      ><span class="d-none d-md-block">Connexion</span>
+    </a>
+@endauth
+
+
+
           <!-- navbar button: End -->
         </ul>
         <!-- Toolbar: End -->

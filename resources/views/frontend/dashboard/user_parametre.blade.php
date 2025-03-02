@@ -1,5 +1,5 @@
-@extends('admin.admin_dashboard')
-@section('admin')
+@extends('frontend.dashboard.user_dashboard')
+@section('userdashboard')
 
 <!-- Content wrapper -->
 <div class="content-wrapper">
@@ -10,12 +10,12 @@
                 <div class="nav-align-top">
                     <ul class="nav nav-pills flex-column flex-md-row mb-6 gap-2 gap-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link active" href="{{route('admin.parametre')}}"
+                        <a class="nav-link active" href="{{route('user.parametre')}}"
                           ><i class="ti-sm ti ti-users me-1_5"></i> Compte</a
                         >
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.securite')}}"
+                        {{-- <a class="nav-link" href="{{route('instructor.securite')}}" --}}
                           ><i class="ti-sm ti ti-lock me-1_5"></i> Sécurité</a
                         >
                       </li>
@@ -43,11 +43,11 @@
 
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('admin.profil.store') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('user.profil.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="d-flex align-items-start align-items-sm-center gap-6">
                                 <img
-                                    src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/'.$profileData->photo) : url('upload/admin_images/NoPhoto.png') }}"
+                                    src="{{ (!empty($profileData->photo)) ? url('upload/user_images/'.$profileData->photo) : url('upload/NoPhoto.png') }}"
                                     alt="user-avatar"
                                     class="d-block w-px-100 h-px-100 rounded"
                                     id="uploadedAvatar" />
@@ -147,7 +147,7 @@
             });
 
             $('#resetImage').click(function() {
-                $('#uploadedAvatar').attr('src', '{{ url('upload/admin_images/NoPhoto.png') }}');
+                $('#uploadedAvatar').attr('src', '{{ url('upload/NoPhoto.png') }}');
                 $('#upload').val('');
             });
         });
