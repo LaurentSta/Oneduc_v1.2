@@ -36,27 +36,34 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
-    Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
-    Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
-    Route::get('/admin/parametre', [AdminController::class, 'AdminParametre'])->name('admin.parametre');
-    Route::post('/admin/profil/store', [AdminController::class, 'AdminProfilStore'])->name('admin.profil.store');
-    Route::get('/admin/securite', [AdminController::class, 'showAdminSecurite'])->name('admin.securite.show');
-    Route::post('/admin/securite', [AdminController::class, 'AdminSecurite'])->name('admin.securite');
+        Route::middleware(['auth', 'role:admin'])->group(function () {
+            Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+            Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
+            Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
+            Route::get('/admin/parametre', [AdminController::class, 'AdminParametre'])->name('admin.parametre');
+            Route::post('/admin/profil/store', [AdminController::class, 'AdminProfilStore'])->name('admin.profil.store');
+            Route::get('/admin/securite', [AdminController::class, 'showAdminSecurite'])->name('admin.securite.show');
+            Route::post('/admin/securite', [AdminController::class, 'AdminSecurite'])->name('admin.securite');
 
-    // Toutes les Routes de catégorie
-    // Category All Route
-    Route::controller(CategoryController::class)->group(function(){
-        Route::get('/all/category','AllCategory')->name('all.category');
-        Route::get('/add/category','AddCategory')->name('add.category');
-        Route::post('/store/category','StoreCategory')->name('store.category');
-        Route::get('/edit/category/{id}','EditCategory')->name('edit.category');
-        Route::post('/update/category','UpdateCategory')->name('update.category');
-        Route::get('/delete/category/{id}','DeleteCategory')->name('delete.category');
+            // Toutes les Routes de catégorie
+            // Category All Route
+            Route::controller(CategoryController::class)->group(function(){
+                Route::get('/all/category','AllCategory')->name('all.category');
+                Route::get('/add/category','AddCategory')->name('add.category');
+                Route::post('/store/category','StoreCategory')->name('store.category');
+                Route::get('/edit/category/{id}','EditCategory')->name('edit.category');
+                Route::post('/update/category','UpdateCategory')->name('update.category');
+                Route::get('/delete/category/{id}','DeleteCategory')->name('delete.category');
 
-    });
-});
+            });
+            // Instructor All Route
+            Route::controller(AdminController::class)->group(function(){
+                Route::get('/all/instructor','AllInstructor')->name('all.instructor');
+                Route::post('/update/user/stauts','UpdateUserStatus')->name('update.user.status');
+
+
+            });
+        });// End Admin Group Middleware
 
 Route::get('/become/instructor', [AdminController::class, 'BecomeInstructor'])->name('become.instructor');
 Route::post('/instructor/register', [AdminController::class, 'InstructorRegister'])->name('instructor.register');

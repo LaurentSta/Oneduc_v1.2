@@ -22,6 +22,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{asset ('backend/assets/img/favicon/favicon.ico')}}" />
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,7 +50,7 @@
     <link rel="stylesheet" href="{{asset ('backend/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css')}}" />
     <link rel="stylesheet" href="{{asset ('backend/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css')}}" />
     <link rel="stylesheet" href="{{asset ('backend/assets/vendor/libs/apex-charts/apex-charts.css')}}" />
-    
+
 
     <!-- Page CSS -->
 

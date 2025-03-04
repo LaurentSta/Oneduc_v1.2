@@ -52,13 +52,8 @@
 
                 <ul class="menu-sub">
                     <li class="menu-item ">
-                        <a href="{{route('all.category')}}" class="menu-link">
+                        <a href="{{route('all.instructor')}}" class="menu-link">
                         <div data-i18n="Dashboard">Tous les formateurs</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="{{route('add.category')}}" class="menu-link">
-                        <div data-i18n="My Course">Ajoutez un formateur</div>
                         </a>
                     </li>
                 </ul>

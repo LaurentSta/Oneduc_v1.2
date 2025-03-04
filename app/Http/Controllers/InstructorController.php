@@ -81,4 +81,5 @@ class InstructorController extends Controller
 
         return back()->with('message', 'Votre mot de passe a été modifié avec succès.');
     }
+
 }
