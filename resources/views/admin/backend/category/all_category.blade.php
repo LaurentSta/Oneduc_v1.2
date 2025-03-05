@@ -46,12 +46,19 @@
                                         <i class="ti ti-dots-vertical"></i>
                                     </button>
                                     <div class="dropdown-menu">
+                                        <!-- Bouton Modifier -->
                                         <a class="dropdown-item" href="{{ route('edit.category', $category->id) }}">
                                             <i class="ti ti-pencil me-1"></i> Éditer
                                         </a>
-                                        <a class="dropdown-item text-danger" href="javascript:void(0);" onclick="confirmDelete({{ $category->id }})">
-                                            <i class="ti ti-trash me-1"></i> Supprimer
-                                        </a>
+
+                                        <!-- Bouton Supprimer (avec formulaire) -->
+                                        <form method="POST" action="{{ route('delete.category', $category->id) }}" style="display: inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="dropdown-item text-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette catégorie ?')">
+                                                <i class="ti ti-trash me-1"></i> Supprimer
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </td>
@@ -62,14 +69,5 @@
         </div>
     </div>
 </div>
-
-<!-- Script de confirmation pour la suppression -->
-<script>
-    function confirmDelete(id) {
-        if (confirm('Êtes-vous sûr de vouloir supprimer cette catégorie ? Cette action est irréversible.')) {
-            window.location.href = "{{ url('/delete/category/') }}/" + id;
-        }
-    }
-</script>
 
 @endsection

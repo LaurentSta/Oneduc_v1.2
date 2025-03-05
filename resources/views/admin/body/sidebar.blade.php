@@ -46,7 +46,8 @@
             </ul>
             <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ti ti-folder"></i>
+                    <i class="menu-icon tf-icons ti ti-chalkboard"></i>
+
                 <div data-i18n="Academy">Formateurs</div>
                 </a>
 
@@ -57,6 +58,28 @@
                         </a>
                     </li>
                 </ul>
+            <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons ti ti-users"></i>
+
+                <div data-i18n="Academy">Groupes</div>
+                </a>
+
+                <ul class="menu-sub">
+                    <li class="menu-item ">
+                        <a href="{{route('all.group')}}" class="menu-link">
+                        <div data-i18n="Dashboard">tous les groupes</div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menu-sub">
+                    <li class="menu-item ">
+                        <a href="{{ route('add.group') }}" class="menu-link">
+                        <div data-i18n="Dashboard">Ajouter un groupe</div>
+                        </a>
+                    </li>
+                </ul>
+
 
       <!-- Misc -->
       <li class="menu-header small">

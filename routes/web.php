@@ -49,13 +49,14 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     // Gestion des catégories
     Route::controller(CategoryController::class)->group(function () {
-        Route::get('/all/category', 'AllCategory')->name('all.category');
-        Route::get('/add/category', 'AddCategory')->name('add.category');
-        Route::post('/store/category', 'StoreCategory')->name('store.category');
-        Route::get('/edit/category/{id}', 'EditCategory')->name('edit.category');
-        Route::post('/update/category', 'UpdateCategory')->name('update.category');
-        Route::get('/delete/category/{id}', 'DeleteCategory')->name('delete.category');
+        Route::get('/all/category', 'AllCategory')->name('all.category'); // Voir toutes les catégories
+        Route::get('/add/category', 'AddCategory')->name('add.category'); // Formulaire d'ajout
+        Route::post('/store/category', 'StoreCategory')->name('store.category'); // Enregistrement
+        Route::get('/edit/category/{id}', 'EditCategory')->name('edit.category'); // Formulaire d'édition
+        Route::put('/update/category', 'UpdateCategory')->name('update.category'); // Mise à jour
+        Route::delete('/delete/category/{id}', 'DeleteCategory')->name('delete.category'); // Suppression
     });
+
 
     // Gestion des instructeurs
     Route::controller(AdminController::class)->group(function () {
@@ -63,18 +64,19 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('/update/user/status', 'UpdateUserStatus')->name('update.user.status');
     });
 
-    // 🟢 Gestion des groupes par l'administrateur
-    Route::controller(GroupeController::class)->group(function () {
-        Route::get('/admin/groupes', 'index')->name('admin.groupes.index'); // Voir tous les groupes
-        Route::get('/admin/groupes/create', 'create')->name('admin.groupes.create'); // Formulaire création
-        Route::post('/admin/groupes', 'store')->name('admin.groupes.store'); // Enregistrer
-        Route::get('/admin/groupes/{id}/edit', 'edit')->name('admin.groupes.edit'); // Modifier
-        Route::put('/admin/groupes/{id}', 'update')->name('admin.groupes.update'); // Mettre à jour
-        Route::delete('/admin/groupes/{id}', 'destroy')->name('admin.groupes.destroy'); // Supprimer
-        Route::get('/admin/groupes/{id}/stagiaires', [GroupeController::class, 'assignStagiaires'])->name('admin.groupes.stagiaires');
-        Route::post('/admin/groupes/{id}/stagiaires', [GroupeController::class, 'storeStagiaires'])->name('admin.groupes.stagiaires.store');
+    Route::controller(GroupController::class)->group(function () {
+        Route::get('/all/group', 'AllGroup')->name('all.group'); // Voir tous les groupes
+        Route::get('/add/group', 'AddGroup')->name('add.group'); // Formulaire de création
+        Route::post('/store/group', 'StoreGroup')->name('store.group'); // Enregistrer un groupe
+        Route::get('/edit/group/{id}', 'EditGroup')->name('edit.group'); // Modifier un groupe
+        Route::post('/update/group', 'UpdateGroup')->name('update.group'); // Mettre à jour
+        Route::get('/delete/group/{id}', 'DeleteGroup')->name('delete.group'); // Supprimer
 
+        // Gestion des stagiaires pour un groupe (associations)
+        Route::get('/group/{id}/assign-stagiaires', 'AssignStagiaires')->name('group.assign.stagiaires');
+        Route::post('/group/{id}/store-stagiaires', 'StoreStagiaires')->name('group.store.stagiaires');
     });
+
 }); // End Admin Group Middleware
 
 // Formulaire inscription instructeur
